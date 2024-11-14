@@ -16,9 +16,9 @@ function App() {
       </div>
       <div id="menu">
         <Section />
-        <DaftarMenu />
       </div>
       <div id="tentang">
+        <DaftarMenu />
         <Footer />
       </div>
     </>

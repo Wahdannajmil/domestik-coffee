@@ -2,15 +2,15 @@ import React from 'react';
 import drinkImage from '../assets/img/drink.jpg';
 import foodImage from '../assets/img/food.jpeg';
 import placeImage from '../assets/img/place.jpeg';
-import { useTheme } from '../context/ThemeContext'; // Import useTheme dari context
+import { useTheme } from '../context/ThemeContext'; // Import useTheme from context
 
 const Section = () => {
-  const { isDarkMode } = useTheme(); // Mengambil nilai isDarkMode dari context
+  const { isDarkMode } = useTheme(); // Retrieve isDarkMode value from context
 
   return (
     <div
-      className={`signature-products py-16 bg-gradient-to-r ${
-        isDarkMode ? 'from-gray-800 to-gray-900' : 'from-yellow-100 to-yellow-200'
+      className={`signature-products py-16 ${
+        isDarkMode ? 'bg-coffee-dark' : 'bg-white'
       }`}
     >
       <div className="container mx-auto px-4">
@@ -32,7 +32,7 @@ const Section = () => {
             </button>
           </div>
           <h2
-            className={`text-4xl font-semibold text-center md:text-left md:w-5/12 px-4 font-montserrat ${
+            className={`text-4xl font-semibold text-center md:text-left md:w-5/12 px-4 font-cinzel ${
               isDarkMode ? 'text-yellow-400' : 'text-yellow-600'
             }`}
           >
@@ -44,7 +44,7 @@ const Section = () => {
           {/* Card 1 */}
           <div
             className={`card shadow-2xl p-6 rounded-xl text-center transition-transform transform hover:scale-105 hover:shadow-2xl max-w-xs border-2 ${
-              isDarkMode ? 'border-yellow-500 bg-gray-800' : 'border-yellow-500 bg-white'
+              isDarkMode ? 'border-yellow-500 bg-coffee-dark' : 'border-yellow-500 bg-white'
             }`}
           >
             <div className="flex justify-center mb-6">
@@ -74,7 +74,7 @@ const Section = () => {
           {/* Card 2 */}
           <div
             className={`card shadow-2xl p-6 rounded-xl text-center transition-transform transform hover:scale-105 hover:shadow-2xl max-w-xs border-2 ${
-              isDarkMode ? 'border-yellow-500 bg-gray-800' : 'border-yellow-500 bg-white'
+              isDarkMode ? 'border-yellow-500 bg-coffee-dark' : 'border-yellow-500 bg-white'
             }`}
           >
             <div className="flex justify-center mb-6">
@@ -104,7 +104,7 @@ const Section = () => {
           {/* Card 3 */}
           <div
             className={`card shadow-2xl p-6 rounded-xl text-center transition-transform transform hover:scale-105 hover:shadow-2xl max-w-xs border-2 ${
-              isDarkMode ? 'border-yellow-500 bg-gray-800' : 'border-yellow-500 bg-white'
+              isDarkMode ? 'border-yellow-500 bg-[#25150d]' : 'border-yellow-500 bg-white'
             }`}
           >
             <div className="flex justify-center mb-6">
@@ -137,3 +137,4 @@ const Section = () => {
 };
 
 export default Section;
+ 

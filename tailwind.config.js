@@ -7,7 +7,7 @@ module.exports = {
       colors: {
         coffee: {
           light: '#f5f5f5', // Latar belakang terang
-          dark: '#3b1f1c',  // Latar belakang gelap
+          dark: '#25150d',  // Latar belakang gelap
           textLight: '#3b1f1c', // Teks gelap untuk mode terang
           textDark: '#f5f5f5', // Teks terang untuk mode gelap
           accentLight: '#a89f91', // Warna aksen terang

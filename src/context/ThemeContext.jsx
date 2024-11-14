@@ -19,20 +19,20 @@ export const ThemeProvider = ({ children }) => {
     });
   };
 
-  // Efek untuk menambahkan class di <html> dan mengubah warna tema
+  
   useEffect(() => {
     const root = document.documentElement;
     if (isDarkMode) {
       root.classList.add('dark');
-      root.style.setProperty('--bg-color', '#3b1f1c'); // Latar belakang gelap
+      root.style.setProperty('--bg-color', '#432818'); // Background gelap
       root.style.setProperty('--text-color', '#f5f5f5'); // Teks terang
-      root.style.setProperty('--accent-color', '#7b5e57'); // Warna aksen gelap
+      root.style.setProperty('--accent-color', '#7b5e57'); // Aksen gelap
     } else {
       root.classList.remove('dark');
-      root.style.setProperty('--bg-color', '#f5f5f5'); // Latar belakang terang
-      root.style.setProperty('--text-color', '#3b1f1c'); // Teks gelap
-      root.style.setProperty('--accent-color', '#a89f91'); // Warna aksen terang
-      root.style.setProperty('--highlight-color', '#fef08a'); // Warna kuning terang di light mode
+      root.style.setProperty('--bg-color', '#f5f5f5'); // Background terang
+      root.style.setProperty('--text-color', '#432818'); // Teks coffee-dark
+      root.style.setProperty('--accent-color', '#a89f91'); // Aksen terang
+      root.style.setProperty('--highlight-color', '#fef08a'); // Warna sorotan
     }
   }, [isDarkMode]);
 

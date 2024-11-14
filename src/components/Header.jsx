@@ -12,27 +12,41 @@ const Header = () => {
       <img
         alt="Interior of a cozy cafe with wooden furniture and warm lighting"
         src={homepageImage}
-        className="w-full h-screen object-cover brightness-75"
+        className={`w-full h-screen object-cover brightness-75 ${isDarkMode ? 'brightness-50' : 'brightness-90'}`}
       />
 
       {/* Overlay with Text */}
       <div
         className={`overlay absolute inset-0 flex flex-col justify-center items-center text-center transition-colors duration-500 ${
-          isDarkMode ? 'bg-black bg-opacity-40 text-white' : 'bg-white bg-opacity-60 text-black'
+          isDarkMode
+            ? 'bg-black bg-opacity-50 text-yellow-200'
+            : 'bg-yellow-50 bg-opacity-50 text-coffee-dark' // Updated text color for light mode
         }`}
       >
         {/* Subheading */}
-        <p className="text-2xl font-semibold tracking-wide uppercase animate-fadeIn font-poppins">
+        <p
+          className={`text-lg font-bold tracking-wider uppercase animate-fadeIn font-merriweather ${
+            isDarkMode ? 'text-yellow-200' : 'text-brown-600'
+          }`}
+        >
           Temukan Kenikmatan di Setiap Sruputan
         </p>
 
         {/* Main Heading */}
-        <h1 className="text-7xl font-extrabold my-6 tracking-wider animate-slideDown font-poppins">
+        <h1
+          className={`text-6xl md:text-7xl font-extrabold my-6 tracking-wide animate-slideDown font-cinzel ${
+            isDarkMode ? 'text-yellow-200' : 'text-brown-900'
+          }`}
+        >
           DOMESTIK COFFEE
         </h1>
 
         {/* Description */}
-        <p className="text-lg max-w-2xl mx-auto animate-fadeIn delay-200 font-poppins">
+        <p
+          className={`text-base md:text-lg max-w-2xl mx-auto leading-relaxed font-merriweather ${
+            isDarkMode ? 'text-gray-300' : 'text-brown-700'
+          }`}
+        >
           Di sini, kami menyajikan pengalaman ngopi terbaik, diiringi dengan atmosfer hangat dan
           nyaman. Nikmati setiap momen bersama teman-teman tercinta di DOMESTIK.
         </p>
@@ -41,12 +55,20 @@ const Header = () => {
         <div className="mt-10 animate-bounce">
           <a
             href="#content"
-            className={`flex flex-col items-center ${
-              isDarkMode ? 'text-yellow-400 hover:text-yellow-500' : 'text-brown-700 hover:text-brown-800'
-            } transition duration-300`}
+            className={`flex flex-col items-center transition duration-300 ${
+              isDarkMode
+                ? 'text-yellow-200 hover:text-yellow-300'
+                : 'text-yellow-600 hover:text-yellow-700'
+            }`}
           >
-            <span className="text-md font-semibold uppercase">Gulir ke Bawah</span>
-            <ArrowDown className="text-5xl mt-2" />
+            <span className="text-md font-semibold uppercase tracking-wide font-merriweather">
+              Gulir ke Bawah
+            </span>
+            <ArrowDown
+              className={`text-5xl mt-2 ${
+                isDarkMode ? 'text-yellow-200' : 'text-yellow-600'
+              }`}
+            />
           </a>
         </div>
       </div>
@@ -54,6 +76,16 @@ const Header = () => {
       {/* CSS Animations */}
       <style>
         {`
+          @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Merriweather:wght@400;700&display=swap');
+
+          .font-cinzel {
+            font-family: 'Cinzel', serif;
+          }
+
+          .font-merriweather {
+            font-family: 'Merriweather', serif;
+          }
+
           .animate-fadeIn {
             animation: fadeIn 1.5s ease-out forwards;
           }
@@ -87,3 +119,4 @@ const Header = () => {
 };
 
 export default Header;
+ 
