@@ -11,14 +11,14 @@ function App() {
   return (
     <>
       <Navbar />
-      <div id="beranda">
+      <div id="beranda" className="mt-[-80px]"> {/* Adjust margin-top to navbar height */}
         <Header />
       </div>
       <div id="menu">
         <Section />
       </div>
       <div id="tentang">
-        <DaftarMenu />
+        {/* <DaftarMenu /> */}
         <Footer />
       </div>
     </>

@@ -2,133 +2,85 @@ import React from 'react';
 import drinkImage from '../assets/img/drink.jpg';
 import foodImage from '../assets/img/food.jpeg';
 import placeImage from '../assets/img/place.jpeg';
-import { useTheme } from '../context/ThemeContext'; // Import useTheme from context
+import { useTheme } from '../context/ThemeContext';
 
 const Section = () => {
-  const { isDarkMode } = useTheme(); // Retrieve isDarkMode value from context
+  const { isDarkMode } = useTheme();
 
   return (
     <div
       className={`signature-products py-16 ${
-        isDarkMode ? 'bg-coffee-dark' : 'bg-white'
+        isDarkMode ? 'bg-[#0F0F0F]' : 'bg-[#F5F5F5]'
       }`}
     >
-      <div className="container mx-auto px-4">
-        <div className="flex flex-col md:flex-row justify-center items-start mb-12">
-          <div className="md:w-5/12 px-4 mb-4 md:mb-0">
-            <p
-              className={`text-left mb-6 font-poppins text-xl leading-relaxed ${
-                isDarkMode ? 'text-white' : 'text-gray-700'
-              }`}
-            >
-              Kami menghadirkan sentuhan istimewa yang memanjakan mata dan lidah, menciptakan pengalaman yang tak terlupakan.
-            </p>
-            <button
-              className={`bg-yellow-600 text-white py-3 px-8 rounded-full hover:bg-yellow-700 transition duration-300 transform hover:scale-105 shadow-lg ${
-                isDarkMode ? 'bg-yellow-500' : ''
-              }`}
-            >
-              Reservasi Sekarang
-            </button>
-          </div>
+      <div className="container mx-auto px-6">
+        <div className="text-center mb-12">
           <h2
-            className={`text-4xl font-semibold text-center md:text-left md:w-5/12 px-4 font-cinzel ${
-              isDarkMode ? 'text-yellow-400' : 'text-yellow-600'
+            className={`text-4xl font-semibold mb-4 ${
+              isDarkMode ? 'text-yellow-200' : 'text-[#4A403A]'
             }`}
           >
-            Let’s Talk About Our Signature Product
+            Discover Our Signature Products
           </h2>
+          <p
+            className={`text-lg ${
+              isDarkMode ? 'text-gray-400' : 'text-gray-600'
+            }`}
+          >
+            Experience the perfect blend of taste, comfort, and style.
+          </p>
         </div>
 
-        <div className="product-cards flex flex-wrap justify-center gap-8">
+        <div className="product-cards grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {/* Card 1 */}
-          <div
-            className={`card shadow-2xl p-6 rounded-xl text-center transition-transform transform hover:scale-105 hover:shadow-2xl max-w-xs border-2 ${
-              isDarkMode ? 'border-yellow-500 bg-coffee-dark' : 'border-yellow-500 bg-white'
-            }`}
-          >
-            <div className="flex justify-center mb-6">
-              <img
-                src={drinkImage}
-                alt="Our Drink"
-                className="h-72 object-cover rounded-lg shadow-md"
-              />
+          <div className="relative group">
+            <img
+              src={drinkImage}
+              alt="Our Drink"
+              className="h-64 w-full object-cover rounded-lg shadow-md"
+            />
+            <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 flex items-center justify-center rounded-lg transition-opacity">
+              <p className="text-white text-lg font-semibold flex items-center">
+                <span className="text-2xl font-bold mr-2">+</span> See Description
+              </p>
             </div>
-            <h3
-              className={`text-2xl font-bold mb-2 ${
-                isDarkMode ? 'text-yellow-400' : 'text-yellow-600'
-              }`}
-            >
-              Our Drinks
-            </h3>
-            <p
-              className={`text-gray-600 mb-4 ${
-                isDarkMode ? 'text-gray-300' : 'text-gray-600'
-              }`}
-            >
-              35 Types to Choose From
+            <p className="text-center text-[#4A403A] mt-4 text-lg font-medium">
+              Caramel Macchiato
             </p>
-            <i className={`fas fa-arrow-right ${isDarkMode ? 'text-yellow-400' : 'text-yellow-500'}`}></i>
           </div>
 
           {/* Card 2 */}
-          <div
-            className={`card shadow-2xl p-6 rounded-xl text-center transition-transform transform hover:scale-105 hover:shadow-2xl max-w-xs border-2 ${
-              isDarkMode ? 'border-yellow-500 bg-coffee-dark' : 'border-yellow-500 bg-white'
-            }`}
-          >
-            <div className="flex justify-center mb-6">
-              <img
-                src={foodImage}
-                alt="Our Food"
-                className="h-72 object-cover rounded-lg shadow-md"
-              />
+          <div className="relative group">
+            <img
+              src={foodImage}
+              alt="Our Food"
+              className="h-64 w-full object-cover rounded-lg shadow-md"
+            />
+            <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 flex items-center justify-center rounded-lg transition-opacity">
+              <p className="text-white text-lg font-semibold flex items-center">
+                <span className="text-2xl font-bold mr-2">+</span> See Description
+              </p>
             </div>
-            <h3
-              className={`text-2xl font-bold mb-2 ${
-                isDarkMode ? 'text-yellow-400' : 'text-yellow-600'
-              }`}
-            >
-              Our Food
-            </h3>
-            <p
-              className={`text-gray-600 mb-4 ${
-                isDarkMode ? 'text-gray-300' : 'text-gray-600'
-              }`}
-            >
-              Fresh & Tasty Meals
+            <p className="text-center text-[#4A403A] mt-4 text-lg font-medium">
+              Flavored Caffe Latte
             </p>
-            <i className={`fas fa-arrow-right ${isDarkMode ? 'text-yellow-400' : 'text-yellow-500'}`}></i>
           </div>
 
           {/* Card 3 */}
-          <div
-            className={`card shadow-2xl p-6 rounded-xl text-center transition-transform transform hover:scale-105 hover:shadow-2xl max-w-xs border-2 ${
-              isDarkMode ? 'border-yellow-500 bg-[#25150d]' : 'border-yellow-500 bg-white'
-            }`}
-          >
-            <div className="flex justify-center mb-6">
-              <img
-                src={placeImage}
-                alt="Our Place"
-                className="h-72 object-cover rounded-lg shadow-md"
-              />
+          <div className="relative group">
+            <img
+              src={placeImage}
+              alt="Our Place"
+              className="h-64 w-full object-cover rounded-lg shadow-md"
+            />
+            <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 flex items-center justify-center rounded-lg transition-opacity">
+              <p className="text-white text-lg font-semibold flex items-center">
+                <span className="text-2xl font-bold mr-2">+</span> See Description
+              </p>
             </div>
-            <h3
-              className={`text-2xl font-bold mb-2 ${
-                isDarkMode ? 'text-yellow-400' : 'text-yellow-600'
-              }`}
-            >
-              Our Place
-            </h3>
-            <p
-              className={`text-gray-600 mb-4 ${
-                isDarkMode ? 'text-gray-300' : 'text-gray-600'
-              }`}
-            >
-              A Cozy & Comfortable Space
+            <p className="text-center text-[#4A403A] mt-4 text-lg font-medium">
+              Cozy Atmosphere
             </p>
-            <i className={`fas fa-arrow-right ${isDarkMode ? 'text-yellow-400' : 'text-yellow-500'}`}></i>
           </div>
         </div>
       </div>
@@ -137,4 +89,3 @@ const Section = () => {
 };
 
 export default Section;
- 

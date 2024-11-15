@@ -6,6 +6,7 @@ import { useTheme } from '../context/ThemeContext';
 const Navbar = () => {
   const { isDarkMode, toggleDarkMode } = useTheme();
   const [activeMenu, setActiveMenu] = useState('beranda'); // State untuk menu aktif
+  const [isScrolled, setIsScrolled] = useState(false); // State untuk mendeteksi scroll
 
   const sections = ['beranda', 'menu', 'tentang']; // Daftar id section
 
@@ -28,6 +29,9 @@ const Navbar = () => {
     if (currentSection && currentSection !== activeMenu) {
       setActiveMenu(currentSection); // Update menu aktif saat scroll
     }
+
+    // Set state isScrolled jika pengguna sudah scroll melewati 50px
+    setIsScrolled(window.scrollY > 50);
   };
 
   useEffect(() => {
@@ -39,7 +43,9 @@ const Navbar = () => {
 
   return (
     <nav
-      className="sticky top-0 z-50 px-6 py-4 shadow-lg transition-colors duration-500 bg-coffee-light dark:bg-coffee-dark"
+      className={`sticky top-0 z-50 px-6 py-4 shadow-lg transition-all duration-500 backdrop-blur-sm ${
+        isScrolled ? 'bg-opacity-10' : 'bg-opacity-10'
+      } ${isDarkMode ? 'bg-coffee-dark' : 'bg-coffee-light'}`}
       style={{ fontFamily: 'Poppins, sans-serif' }}
     >
       <div className="container mx-auto flex justify-between items-center">

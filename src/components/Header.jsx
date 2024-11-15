@@ -20,12 +20,12 @@ const Header = () => {
         className={`overlay absolute inset-0 flex flex-col justify-center items-center text-center transition-colors duration-500 ${
           isDarkMode
             ? 'bg-black bg-opacity-50 text-yellow-200'
-            : 'bg-yellow-50 bg-opacity-50 text-coffee-dark' // Updated text color for light mode
+            : 'bg-yellow-50 bg-opacity-30 text-coffee-dark' // Updated text color for light mode
         }`}
       >
         {/* Subheading */}
         <p
-          className={`text-lg font-bold tracking-wider uppercase animate-fadeIn font-merriweather ${
+          className={`text-lg font-bold tracking-wider uppercase animate-fadeIn font-merriweather mt-10 ${
             isDarkMode ? 'text-yellow-200' : 'text-brown-600'
           }`}
         >
@@ -35,7 +35,7 @@ const Header = () => {
         {/* Main Heading */}
         <h1
           className={`text-6xl md:text-7xl font-extrabold my-6 tracking-wide animate-slideDown font-cinzel ${
-            isDarkMode ? 'text-yellow-200' : 'text-brown-900'
+            isDarkMode ? 'text-yellow-200' : 'text-brown-800'
           }`}
         >
           DOMESTIK COFFEE
@@ -58,7 +58,7 @@ const Header = () => {
             className={`flex flex-col items-center transition duration-300 ${
               isDarkMode
                 ? 'text-yellow-200 hover:text-yellow-300'
-                : 'text-yellow-600 hover:text-yellow-700'
+                : 'text-brown-900 hover:text-brown-700' // Updated hover color for light mode
             }`}
           >
             <span className="text-md font-semibold uppercase tracking-wide font-merriweather">
@@ -66,7 +66,7 @@ const Header = () => {
             </span>
             <ArrowDown
               className={`text-5xl mt-2 ${
-                isDarkMode ? 'text-yellow-200' : 'text-yellow-600'
+                isDarkMode ? 'text-yellow-200' : 'text-brown-900'
               }`}
             />
           </a>
@@ -119,4 +119,3 @@ const Header = () => {
 };
 
 export default Header;
- 
