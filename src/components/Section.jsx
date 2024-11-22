@@ -1,39 +1,30 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import drinkImage from '../assets/img/drink.jpg';
 import foodImage from '../assets/img/food.jpeg';
 import placeImage from '../assets/img/place.jpeg';
-import { useTheme } from '../context/ThemeContext';
 
 const Section = () => {
-  const { isDarkMode } = useTheme();
+  const navigate = useNavigate();
 
   return (
-    <div
-      className={`signature-products py-16 ${
-        isDarkMode ? 'bg-[#0F0F0F]' : 'bg-[#F5F5F5]'
-      }`}
-    >
+    <div className="signature-products py-16 bg-[#F5F5F5]">
       <div className="container mx-auto px-6">
         <div className="text-center mb-12">
-          <h2
-            className={`text-4xl font-semibold mb-4 ${
-              isDarkMode ? 'text-yellow-200' : 'text-[#4A403A]'
-            }`}
-          >
+          <h2 className="text-4xl font-semibold mb-4 text-[#4A403A]">
             Discover Our Signature Products
           </h2>
-          <p
-            className={`text-lg ${
-              isDarkMode ? 'text-gray-400' : 'text-gray-600'
-            }`}
-          >
+          <p className="text-lg text-gray-600">
             Experience the perfect blend of taste, comfort, and style.
           </p>
         </div>
 
         <div className="product-cards grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {/* Card 1 */}
-          <div className="relative group">
+          {/* Card 1 - Drink */}
+          <div
+            className="relative group cursor-pointer"
+            onClick={() => navigate('/drink')}
+          >
             <img
               src={drinkImage}
               alt="Our Drink"
@@ -45,12 +36,15 @@ const Section = () => {
               </p>
             </div>
             <p className="text-center text-[#4A403A] mt-4 text-lg font-medium">
-              Caramel Macchiato
+              Drink
             </p>
           </div>
 
-          {/* Card 2 */}
-          <div className="relative group">
+          {/* Card 2 - Food */}
+          <div
+            className="relative group cursor-pointer"
+            onClick={() => navigate('/food')}
+          >
             <img
               src={foodImage}
               alt="Our Food"
@@ -62,12 +56,15 @@ const Section = () => {
               </p>
             </div>
             <p className="text-center text-[#4A403A] mt-4 text-lg font-medium">
-              Flavored Caffe Latte
+              Food
             </p>
           </div>
 
-          {/* Card 3 */}
-          <div className="relative group">
+          {/* Card 3 - Place */}
+          <div
+            className="relative group cursor-pointer"
+            onClick={() => navigate('/place')}
+          >
             <img
               src={placeImage}
               alt="Our Place"
@@ -79,7 +76,7 @@ const Section = () => {
               </p>
             </div>
             <p className="text-center text-[#4A403A] mt-4 text-lg font-medium">
-              Cozy Atmosphere
+              Place
             </p>
           </div>
         </div>
